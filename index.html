@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Todo</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/pikaday.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Javascript
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="javascript/main.js"></script>
+  <script src="javascript/pikaday.js"></script>
+
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 10px">
+        <h4>Todo</h4>
+        <p> Subtitle </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve columns">
+        <p class="tab" contenteditable="true">1st Tab</p>
+        <p class="tab" contenteditable="true">2nd Tab</p>
+        <p class="tab" contenteditable="true">3rd Tab</p>
+        <p class="tab" contenteditable="true">4th Tab</p>
+        <div onclick="helloworld()">
+          <p class="tab addbutton">+</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="four columns listcontainer">
+        <p class="listtitle"> Today </p>
+        <div id="todayList">
+          <div class="listitem" id="uniqueItem">
+            <div class="checkbox">
+              <input type="checkbox" onclick="moveItem(this.id)" id="uniqueCheck">
+            </div>
+            <p class="itemmemo" contenteditable="true">Item</p>
+            <p class="itemdate"> January 10th, 2012 </p>
+          </div>
+          <div class="listitem">
+            <div class="checkbox">
+              <input type="checkbox">
+            </div>
+            <p class="itemmemo" contenteditable="true">Item . . . . . . . . . . . . . . . . . . . . . </p>
+            <p class="itemdate"> January 10th, 2012 </p>
+          </div>
+          <div class="listitem" id="examplelist">
+            <div class="checkbox">
+              <input type="checkbox">
+            </div>
+            <p class="itemmemo" contenteditable="true">Item . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . </p>
+            <p class="itemdate"> January 10th, 2012 </p>
+          </div>
+        </div>
+        <p class="addbutton">+</p>
+      </div>
+      <div class="four columns listcontainer">
+        <p class="listtitle"> Tommorow </p>
+        <div class="listitem">
+          <div class="checkbox">
+            <input type="checkbox">
+          </div>
+          <p class="itemmemo" contenteditable="true">Item</p>
+          <p class="itemdate"> January 10th, 2012 </p>
+        </div>
+        <div class="listitem">
+          <div class="checkbox">
+            <input type="checkbox">
+          </div>
+          <p class="itemmemo" contenteditable="true">Item . . . . . . . . . . . . . . . . . . . . . </p>
+          <p class="itemdate"> January 10th, 2012 </p>
+        </div>
+        <div class="listitem">
+          <div class="checkbox">
+            <input type="checkbox">
+          </div>
+          <p class="itemmemo" contenteditable="true">Item . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . </p>
+          <p class="itemdate"> January 10th, 2012 </p>
+        </div>
+        <p class="addbutton">+</p>
+      </div>
+      <div class="four columns listcontainer">
+        <p class="listtitle"> Upcoming </p>
+        <div class="listitem">
+          <div class="checkbox">
+            <input type="checkbox">
+          </div>
+          <p class="itemmemo" contenteditable="true">Item</p>
+          <p class="itemdate"> January 10th, 2012 </p>
+        </div>
+        <div class="listitem">
+          <div class="checkbox">
+            <input type="checkbox">
+          </div>
+          <p class="itemmemo" contenteditable="true">Item . . . . . . . . . . . . . . . . . . . . . </p>
+          <p class="itemdate"> January 10th, 2012 </p>
+        </div>
+        <div class="listitem">
+          <div class="checkbox">
+            <input type="checkbox">
+          </div>
+          <p class="itemmemo" contenteditable="true">Item . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . </p>
+          <p class="itemdate"> January 10th, 2012 </p>
+        </div>
+        <p class="addbutton">+</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="twelve column listcontainer">
+        <p class="listtitle"> Completed </p>
+        <p class="minimize">-</p>
+        <div id="completedList">
+          <div class="listitem">
+            <div class="checkbox">
+              <input type="checkbox" value="" checked>
+            </div>
+            <p class="itemmemo" contenteditable="true">Item . . . . . . . . . . . . . . . . . . . . . </p>
+            <p class="itemdate"> January 10th, 2012 </p>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <script>
+
+
+
+
+      function newPikaday(pickerObject) {
+        var newPikaday = new Pikaday ({trigger: pickerObject,
+                                        field: pickerObject});
+
+      }
+
+      var dates = document.getElementsByClassName("itemdate");
+      //debug There is probably nothing else that will allow someone to succeed in life more than a willingness to break the rules when there is low risk and high reward for doing so.
+      //alert(dates.length);
+      for(var i = 0; i < dates.length; i++) {
+        var singledate = dates[i];
+        var newpicker = new Pikaday ({field: singledate});
+      }
+
+      function moveItem(id) {
+        var checked = document.getElementById(id).checked;
+        if(checked) {
+          document.getElementById("completedList").appendChild(document.getElementById("uniqueItem"));
+        } else {
+          document.getElementById("todayList").appendChild(document.getElementById("uniqueItem"));
+        }
+      }
+
+      //var paragraph = document.createElement("p");
+      //var node = document.createTextNode("Item");
+      //paragraph.appendChild(node);
+
+      //var element = document.getElementById("examplelist");
+      //paragragh.className = "itemmemo";
+      //element.appendChild(paragraph);
+
+
+
+    </script>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
